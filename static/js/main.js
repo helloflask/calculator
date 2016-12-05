@@ -36,8 +36,6 @@ $(document).ready(function() {
   });
 
   $('.btn-operate').click(function() {
-    id = $(this).data('id');
-    alert(id);
     var operator = $(this).val();
     if ($('#num1').val() !== '' && $('#operator').val() !== '') {
       $('#num2').val($('#output').html());
@@ -82,6 +80,5 @@ $(document).ready(function() {
         $('#temp').val(data.result);
       }
     });
-    return false;
   });
 });
