@@ -12,6 +12,10 @@ $(document).ready(function() {
   };
 
   $('.nums').click(function() {
+    if (('+-*/').indexOf($('#output').html()) != -1) {
+      $('#output').html('');
+    }
+
     if ($('#output').html() == '0' || $('#output2').html() == 'Reach Digit Limit') {
       clearOutput()
     }
@@ -64,7 +68,7 @@ $(document).ready(function() {
   });
 
   $('#resultButton').click(function() {
-    $('#num2').val($('#output').html().slice(1));
+    $('#num2').val($('#output').html());
     $.getJSON($SCRIPT_ROOT + '/_calculate', {
       num1: $('#num1').val(),
       operator: $('#operator').val(),
