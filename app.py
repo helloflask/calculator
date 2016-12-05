@@ -8,6 +8,7 @@
     :copyright: (c) 2015 by Grey li.
     :license: MIT, see LICENSE for more details.
 """
+import re
 from flask import Flask, jsonify, render_template, request
 app = Flask(__name__)
 
@@ -17,6 +18,10 @@ def calculate():
     a = request.args.get('num1', '0')
     operator = request.args.get('operator', '+')
     b = request.args.get('num2', '0')
+    m = re.match('\d+', a)
+    n = re.match('\d+', b)
+    if m is None or n is None or operator not in '+-*/':
+        return jsonify(result='I Catch You!')
     if operator == '/':
         result = eval(a + operator + str(float(b)))
     else:
