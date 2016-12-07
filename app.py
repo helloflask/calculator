@@ -18,8 +18,8 @@ def calculate():
     a = request.args.get('num1', '0')
     operator = request.args.get('operator', '+')
     b = request.args.get('num2', '0')
-    m = re.match('\d+', a)
-    n = re.match('\d+', b)
+    m = re.match('-?\d+', a)
+    n = re.match('-?\d+', b)
     if m is None or n is None or operator not in '+-*/':
         return jsonify(result='I Catch a BUG!')
     if operator == '/':
