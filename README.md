@@ -2,7 +2,7 @@
 A simple calculator made with Flask and JavaScript.
 
 ## DEMO
-http://calculator3.herokuapp.com/
+https://greyli.github.io/calculator/
 
 ![demo](https://raw.githubusercontent.com/helloflask/calculator/master/static/demo.png)
 
