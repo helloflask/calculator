@@ -54,7 +54,7 @@ $(document).ready(function() {
           $('#temp').val(0);
         } else {
           $('#output').html(operator);
-        $('#output2').html(data.result + operator);
+          $('#output2').html(data.result + operator);
           $('#num1').val(data.result);
           $('#operator').val(operator);
         }
