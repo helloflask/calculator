@@ -61,9 +61,9 @@ $(document).ready(function() {
       });
     } else {
       $('#num1').val($('#output').html());
-      $('#operator').val($(this).val());
+      $('#operator').val(operator);
       $('#output').html(operator);
-      $('#output2').append($(this).val());
+      $('#output2').append(operator);
     }
   });
 

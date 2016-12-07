@@ -21,7 +21,7 @@ def calculate():
     m = re.match('\d+', a)
     n = re.match('\d+', b)
     if m is None or n is None or operator not in '+-*/':
-        return jsonify(result='I Catch You!')
+        return jsonify(result='I Catch a BUG!')
     if operator == '/':
         result = eval(a + operator + str(float(b)))
     else:
