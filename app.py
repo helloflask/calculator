@@ -15,9 +15,9 @@ app = Flask(__name__)
 
 @app.route('/_calculate')
 def calculate():
-    a = request.args.get('num1', '0')
+    a = request.args.get('number1', '0')
     operator = request.args.get('operator', '+')
-    b = request.args.get('num2', '0')
+    b = request.args.get('number2', '0')
     m = re.match('-?\d+', a)
     n = re.match('-?\d+', b)
     if m is None or n is None or operator not in '+-*/':
