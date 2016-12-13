@@ -28,6 +28,7 @@ $(document).ready(function() {
             mainOutput.html('');
         }
 
+        if ($(this).val() == '.' && (mainOutput.html()).indexOf('.') != -1) return ;
         if (mainOutput.html() == '0' || subOutput.html() == 'Reach Digit Limit') {
             clearOutput()
         }
@@ -52,14 +53,15 @@ $(document).ready(function() {
 
     $('.btn-operate').click(function() {
         var newOperator = $(this).val();
-        if (num1.val() !== '' && op.val() !== '') {
+        if (num1.val() !== '' &&  ('+-*/').indexOf(num1.val()) == -1 && op.val() !== '') {
             num2.val(mainOutput.html());
+            if (('+-*/').indexOf(num2.val()) != -1) return ;
             $.getJSON($SCRIPT_ROOT + '/_calculate', {
                 number1: num1.val(),
                 operator: op.val(),
                 number2: num2.val()
             }, function(data) {
-            if (data.result.toString().length > 14) {
+            if (data.result.toString().length > 13) {
                 digitError();
             } else {
                 mainOutput.html(newOperator);
@@ -77,13 +79,14 @@ $(document).ready(function() {
     });
 
     $('#resultButton').click(function() {
+        if (mainOutput.html() === '' || ('+-*/').indexOf(mainOutput.html()) != -1) return ;
         num2.val(mainOutput.html());
         $.getJSON($SCRIPT_ROOT + '/_calculate', {
             number1: num1.val(),
             operator: op.val(),
             number2: num2.val()
         }, function(data) {
-        if (data.result.toString().length > 14) {
+        if (data.result.toString().length > 13) {
             digitError();
         } else {
             mainOutput.html(data.result);
