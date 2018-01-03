@@ -1,5 +1,6 @@
-Flask==0.11.1
+Flask==0.12.2
 Jinja2==2.8
-Werkzeug==0.11.11
+Werkzeug==0.13
+# deploy
 gunicorn==18.0
 gevent
