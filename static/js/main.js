@@ -91,9 +91,7 @@ $(document).ready(function() {
         } else {
             mainOutput.html(data.result);
             subOutput.html(data.result);
-            temp.val('');
             clearData();
-            num1.val(data.result)
         }
         });
     });
