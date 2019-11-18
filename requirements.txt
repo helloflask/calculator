@@ -1,6 +1,6 @@
 Flask==0.12.2
 Jinja2==2.8
-Werkzeug==0.13
+Werkzeug==0.15.3
 # deploy
 gunicorn==19.5.0
 gevent
