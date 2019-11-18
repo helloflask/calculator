@@ -29,8 +29,10 @@ $(document).ready(function() {
         }
 
         if ($(this).val() == '.' && (mainOutput.html()).indexOf('.') != -1) return ;
-        if (mainOutput.html() == '0' || subOutput.html() == 'Reach Digit Limit') {
-            clearOutput()
+        if ($(this).val() !== '.') {
+            if (mainOutput.html() == '0' || subOutput.html() == 'Reach Digit Limit') {
+                clearOutput()
+            }    
         }
 
         if (temp.val() !== '') {

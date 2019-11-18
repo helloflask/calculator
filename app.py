@@ -20,10 +20,13 @@ def calculate():
     a = request.args.get('number1', '0')
     operator = request.args.get('operator', '+')
     b = request.args.get('number2', '0')
-    m = re.match('-?\d+', a)
-    n = re.match('-?\d+', b)
+    # validate the input data
+    m = re.match(r'^\-?\d*[.]?\d*$', a)
+    n = re.match(r'^\-?\d*[.]?\d*$', b)
+
     if m is None or n is None or operator not in '+-*/':
-        return jsonify(result='I Catch a BUG!')
+        return jsonify(result='Error!')
+
     if operator == '/':
         result = eval(a + operator + str(float(b)))
     else:
@@ -37,4 +40,4 @@ def index():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
