@@ -1,5 +1,5 @@
 Flask==0.12.2
-Jinja2==2.8
+Jinja2==2.11.3
 Werkzeug==0.13
 # deploy
 gunicorn==19.5.0
